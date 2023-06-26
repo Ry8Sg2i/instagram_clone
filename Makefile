@@ -55,7 +55,7 @@ db.seed:
 
 db.reset:
 	${DOCKER_COMPOSE_RUN} app rails db:migrate:reset
-	@make dbseed
+	@make db.seed
 
 annotate:
 	${DOCKER_COMPOSE_RUN} app annotate

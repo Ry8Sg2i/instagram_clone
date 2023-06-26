@@ -32,6 +32,9 @@ module App
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Don't generate system test files.
+    config.time_zone = 'Tokyo'
     config.generators.system_tests = nil
+    Rails.application.routes.default_url_options[:host] = ENV['APP_DEFAULT_URL_HOST']
+    Rails.application.routes.default_url_options[:port] = ENV['APP_DEFAULT_URL_PORT']
   end
 end
