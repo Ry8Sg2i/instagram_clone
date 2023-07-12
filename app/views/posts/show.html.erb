@@ -1,0 +1,16 @@
+<div>
+  <p>
+    <strong>Description:</strong>
+    <%= @post.description %>
+  </p>
+  <% if @post.thumbnail.attached? %>
+  <p>
+    <strong>Thumbnail:</strong>
+    <%= image_tag @post.thumbnail %>
+  </p>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "Back to posts", posts_path %>
+</div>

@@ -1,0 +1,35 @@
+<div class="container max-w-5xl pt-8 mx-auto xl:grid xl:grid-cols-[630px_320px] xl:gap-16 md:pt-12">
+  <div class="w-full mx-auto content">
+    <div class="mx-auto w-[min(470px,100%)]">
+      <h1>New post</h1>
+
+      <%= form_with(model: @post) do |form| %>
+        <% if @post.errors.any? %>
+          <div style="color: red">
+            <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+            <ul>
+              <% @post.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div>
+          <%= form.label :description %>
+          <%= form.text_field :description %>
+        </div>
+
+        <div>
+          <%= form.label :thumbnail %>
+          <%= form.file_field :thumbnail %>
+        </div>
+
+        <div>
+          <%= form.submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
