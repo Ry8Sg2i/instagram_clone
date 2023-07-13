@@ -9,8 +9,10 @@
     <%= image_tag @post.thumbnail %>
   </p>
   <% end %>
-</div>
-
-<div>
-  <%= link_to "Back to posts", posts_path %>
+  <div>
+  <li>
+    <%= button_to '削除', post_path(@post), method: :delete %>
+  </li>
+    <%= link_to "Back to home", home_index_path %>
+  </div>
 </div>

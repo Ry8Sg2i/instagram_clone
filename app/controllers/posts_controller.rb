@@ -7,7 +7,6 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
-  
 
   def create
     @post = Post.new(post_params)
@@ -18,6 +17,12 @@ class PostsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to home_index_url, notice: "Post was successfully destroyed."
   end
 
   private
