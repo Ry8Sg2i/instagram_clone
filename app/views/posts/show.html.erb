@@ -1,18 +1,24 @@
-<div>
-  <p>
-    <strong>Description:</strong>
-    <%= @post.description %>
-  </p>
-  <% if @post.thumbnail.attached? %>
-  <p>
-    <strong>Thumbnail:</strong>
-    <%= image_tag @post.thumbnail %>
-  </p>
-  <% end %>
-  <div>
-  <li>
-    <%= button_to '削除', post_path(@post), method: :delete %>
-  </li>
-    <%= link_to "Back to home", home_index_path %>
+<div class="container max-w-5xl pt-8 mx-auto xl:grid xl:grid-cols-[630px_320px] xl:gap-16 md:pt-12">
+  <div class="w-full mx-auto content">
+    <div class="mx-auto w-[min(470px,100%)]">
+      <div>
+        <p>
+          <strong>Description:</strong>
+          <%= @post.description %>
+        </p>
+        <% if @post.thumbnail.attached? %>
+        <p>
+          <strong>Thumbnail:</strong>
+          <%= image_tag @post.thumbnail %>
+        </p>
+        <% end %>
+        <div>
+        <li>
+          <%= button_to '削除', post_path(@post), method: :delete %>
+        </li>
+          <%= link_to "Back to home", home_index_path %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

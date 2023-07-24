@@ -8,7 +8,7 @@
             <h2 class="ml-2 text-sm"><%=post.user.nickname%></h2>
             <time class="text-sm text-gray-500">・1時間前</time>
             <button class="ml-auto hover:opacity-60">
-              <%= link_to posts_path do %>
+              <%= link_to post_path(post) do %>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
