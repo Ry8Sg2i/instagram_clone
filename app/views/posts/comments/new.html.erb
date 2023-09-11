@@ -1,0 +1,27 @@
+<div class="container max-w-5xl pt-8 mx-auto xl:grid xl:grid-cols-[630px_320px] xl:gap-16 md:pt-12">
+  <div class="w-full mx-auto content">
+    <div>
+      <p>投稿</p>
+      <% @post.comments.each do |comment| %>
+        <div>
+          <p><%= image_tag comment.user.get_profile_image(100, 100) %></p>
+          <%= comment.user.name %>
+          <%= comment.created_at.strftime('%Y/%m/%d') %>
+          <%= comment.comment %>
+        </div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form_with(model: [@post, Comment.new], url: post_comments_path(@post)) do |form| %>
+        <div class="field">
+          <%= form.label :comment, "コメント" %>
+          <%= form.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
+        </div>
+        <div class="actions">
+          <%= form.submit "送信する" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
